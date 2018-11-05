@@ -1,0 +1,17 @@
+pipeline{
+    agent any
+    parameter{
+        string(name:'userName',defaultValue:'admin',description:'This is a default username')
+        choice(name:'version',choice:['1.1','1.2','1.3'],description:'Select the corresponding version')
+        booleanParam(name:'is_select',defaultValue:true,description:'Default value is selected')
+    }
+    stages{
+        stage('Build'){
+            steps{
+                script{
+                    bat "dir"
+                }
+            }
+        }
+    }
+}
