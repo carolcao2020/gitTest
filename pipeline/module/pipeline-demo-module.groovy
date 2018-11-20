@@ -6,4 +6,16 @@ def find_files(filetype){
         println file.name
     }
 }
+def read_json_file(file_path){
+    def propMap = readJSON file:file_path
+    propMap.each{
+        println(it.key + "=" + it.value)
+    }
+}
+def read_json_text(json_string){
+    def propMap = readJSON text:json_string
+    propMap.each{
+        println(it.key + "=" + it.value)
+    }
+}
 return this;
