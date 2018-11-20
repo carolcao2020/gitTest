@@ -22,6 +22,8 @@ pipeline{
                     println("##########################")
                     json_string = '{"Name":"carol","Age":18,"City":"Beijing","Gender":"female"}'
                     model_test.read_json_text(json_string)
+                }
+            }
         }
         stage('Test Method'){
             steps{
