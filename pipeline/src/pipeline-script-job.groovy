@@ -17,7 +17,7 @@ pipeline{
         stage('read json'){
             steps{
                 script{
-                    json_file = load env.WORKSPACE + "/testdata/test_json.json"
+                    json_file = env.WORKSPACE + "/testdata/test_json.json"
                     model_test.read_json_file(json_file)
                     println "##########################"
                     json_string = '{"Name":"carol","Age":18,"City":"Beijing","Gender":"female"}'
