@@ -34,4 +34,11 @@ def write_json_file(input_json, json_file){
     }
     writeJSON file : json_file, json : input
 }
+
+def read_properites(properties_file){
+    def props = readProperties interpolate: true, file:properties_file
+    props.each{
+        println (it.key + " = " + it.value)
+    }
+}
 return this;
