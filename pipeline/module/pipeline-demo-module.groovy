@@ -18,4 +18,17 @@ def read_json_text(json_string){
         println(it.key + "=" + it.value)
     }
 }
+
+def write_json_file(input_json, json_file){
+    def input = ''
+    if(input_json.toString().endWith(".json")){
+        input = readJSON file: input_json
+    }
+    else{
+        def json_Output = new JsonOutput()
+        def new_json_object = jsonOutput.toJson(input_json)
+        input = new_json_object
+    }
+    writeJSON file : json_file, json : input
+}
 return this;
