@@ -79,7 +79,7 @@ pipeline{
                              city: 'Beijing',
                              ismale: false]
                     yaml_file_new = env.WORKSPACE + "/testdata/new.ylm"
-                    model_test.write_to_yaml(yaml_file_new)
+                    model_test.write_to_yaml(amap,yaml_file_new)
                     println "show the new yaml file content"
                     model_test.read_yaml_file(yaml_file_new)
                 }
