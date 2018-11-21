@@ -25,8 +25,8 @@ pipeline{
                     println "Write test_json.json to new_json.json"
                     new_json_file1 = env.WORKSPACE +"/testdata/new_json1.json"
                     new_json_file2 = env.WORKSPCAE + "/testdata/new_json2.json"
-                    write_json_file(json_file,new_json_file1)
-                    write_json_file(json_string,new_json_file2)
+                    model_test.write_json_file(json_file,new_json_file1)
+                    model_test.write_json_file(json_string,new_json_file2)
                 }
             }
         }
