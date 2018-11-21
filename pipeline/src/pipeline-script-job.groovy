@@ -62,10 +62,10 @@ pipeline{
                     yaml_file = env.WORKSPACE + "/testdata/test.yml"
                     model_test.read_yaml_file(yaml_file)
                     yaml_string = """
-                    name:"Lucy"
-                    age:18
-                    city:Beijing
-                    ismale:false
+                    name: 'Lucy'
+                    age: 18
+                    city: 'Beijing'
+                    ismale: false
                     """
                     model_test.read_yaml_file(yaml_string)
                 }
