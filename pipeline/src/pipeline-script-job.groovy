@@ -22,6 +22,11 @@ pipeline{
                     println "##########################"
                     json_string = '{"Name":"carol","Age":18,"City":"Beijing","Gender":"female"}'
                     model_test.read_json_text(json_string)
+                    println "Write test_json.json to new_json.json"
+                    new_json_file1 = env.WORKSPACE +"/testdata/new_json1.json"
+                    new_json_file2 = env.WORKSPCAE + "/testdata/new_json2.json"
+                    write_json_file(json_file,new_json_file1)
+                    write_json_file(json_string,new_json_file2)
                 }
             }
         }
