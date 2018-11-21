@@ -32,7 +32,7 @@ def write_json_file(input_json, json_file){
         def new_json_object = jsonSlurper.parseText
         input = new_json_object
     }
-    writeJSON file : json_file, json : input
+    writeJSON file: json_file , json: input
 }
 
 def read_properties(properties_file){
@@ -53,5 +53,8 @@ def read_yaml_file(yaml_file){
     datas.each{
         println (it.key + " = " + it.value)
     }
+}
+def write_to_yaml(map_data,yaml_path){
+    writeYaml file: yaml_path , data: map_data
 }
 return this;
