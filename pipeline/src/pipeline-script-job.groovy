@@ -59,7 +59,7 @@ pipeline{
         stage('Read yaml file'){
             steps{
                 script{
-                    yaml_file = env.WORKSPACE + "/testdata/test.yaml"
+                    yaml_file = env.WORKSPACE + "/testdata/test.yml"
                     model_test.read_yaml_file(yaml_file)
                     yaml_string = """
                     name:"Lucy"
