@@ -22,11 +22,26 @@ pipeline{
                     println "##########################"
                     json_string = '{"Name":"carol","Age":18,"City":"Beijing","Gender":"female"}'
                     model_test.read_json_text(json_string)
+                }
+            }
+        }
+        stage('write json'){
+            steps{
+                script{
                     println "Write test_json.json to new_json.json"
+                    json_file = env.WORKSPACE + "/testdata/test_json.json"
+                    json_string = '{"Name":"carol","Age":18,"City":"Beijing","Gender":"female"}'
                     new_json_file1 = env.WORKSPACE +"/testdata/new_json1.json"
                     new_json_file2 = env.WORKSPCAE + "/testdata/new_json2.json"
                     //model_test.write_json_file(json_file,new_json_file1)
                     //model_test.write_json_file(json_string,new_json_file2)
+                    
+                }
+            }
+        }
+        stage('read properties file'){
+            steps{
+                script{
                     properties_file = env.WORKSPACE + "/testdata/test.properties"
                     println "Read property file"
                     model_test.read_properties(properties_file)
