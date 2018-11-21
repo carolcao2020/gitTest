@@ -74,9 +74,9 @@ pipeline{
         stage('write yaml file'){
             steps{
                 script{
-                    def amap=[name: 'Carol'
-                             age: 18
-                             city: 'Beijing'
+                    def amap=[name: 'Carol',
+                             age: 18,
+                             city: 'Beijing',
                              ismale: false]
                     yaml_file_new = env.WORKSPACE + "/testdata/new.ylm"
                     model_test.write_to_yaml(yaml_file_new)
