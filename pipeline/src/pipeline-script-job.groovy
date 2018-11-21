@@ -33,8 +33,8 @@ pipeline{
                     json_string = '{"Name": "carol","Age": 18,"City": "Beijing","Gender": "female"}'
                     new_json_file1 = env.WORKSPACE +"/testdata/new_json1.json"
                     new_json_file2 = env.WORKSPCAE + "/testdata/new_json2.json"
-                    model_test.write_json_file(json_file,new_json_file1)
-                    model_test.write_json_file(json_string,new_json_file2)
+                    //model_test.write_json_file(json_file,new_json_file1)
+                    //model_test.write_json_file(json_string,new_json_file2)
                     
                 }
             }
@@ -68,6 +68,20 @@ pipeline{
                     ismale: false
                     """
                     model_test.read_yaml_file(yaml_string)
+                }
+            }
+        }
+        stage('write yaml file'){
+            steps{
+                script{
+                    def amap=[name: 'Carol'
+                             age: 18
+                             city: 'Beijing'
+                             ismale: false]
+                    yaml_file_new = env.WORKSPACE + "/testdata/new.ylm"
+                    model_test.write_to_yaml(yaml_file_new)
+                    println "show the new yaml file content"
+                    model_test.read_yaml_file(yaml_file_new)
                 }
             }
         }
