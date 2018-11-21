@@ -56,6 +56,21 @@ pipeline{
                 }
             }
         }
+        stage('Read yaml file'){
+            steps{
+                script{
+                    yaml_file = env.WORKSPACE + "/testdata/test.yaml"
+                    model_test.read_yaml_file(yaml_file)
+                    yaml_string = """
+                    name:"Lucy"
+                    age:18
+                    city:Beijing
+                    ismale:false
+                    """
+                    model_test.read_yaml_file(yaml_string)
+                }
+            }
+        }
         stage('Test Method'){
             steps{
                 script{
